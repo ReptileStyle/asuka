@@ -528,10 +528,11 @@ class _Asuka {
   ///  );
   /// ```
 
-  Widget builder(BuildContext context, Widget? child) {
+
+  Widget builder(BuildContext context, Widget? child, List<NavigatorObserver> observers) {
     return Navigator(
       initialRoute: '/',
-      observers: [asukaHeroController],
+      observers: [asukaHeroController, ...observers],
       onGenerateRoute: (_) => material.MaterialPageRoute(
         builder: (context) => _BuildPage(child: child),
       ),
